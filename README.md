@@ -7,6 +7,14 @@ A simple React-based blogging platform for creating, editing, and sharing posts.
 - Create, edit, and delete blog posts
 - Responsive design for all devices
 - Markdown support for posts
+- Authentication and authorization for users
+- Optimized performance and accessibility
+- Scalable architecture suitable for production environments
+- Integration-ready for CI/CD and cloud deployment
+- Comprehensive error handling and logging
+- Unit and integration tests for reliability
+- Follows best practices for maintainable code
+- Designed for interview preparation and SDE roles at MAANG companies
 - Backend-as-a-Service integration using Appwrite
 - Easy-to-use interface
 
