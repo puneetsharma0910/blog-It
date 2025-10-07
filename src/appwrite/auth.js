@@ -35,7 +35,7 @@ export class AuthService {
   async login({ email, password }) {
     try {
       const result = await this.account.createEmailPasswordSession({
-        email : email,
+        email: email,
         password: password,
       });
     } catch (error) {
@@ -44,16 +44,23 @@ export class AuthService {
   }
 
   async getCurrentUser() {
-  try {
-    const user = await this.account.get();
-    
-    return user;
-  } catch (error) {
-    console.error("Get current user error:", error);
-    return null;
-  }
-}
+    try {
+      const user = await this.account.get();
 
+      return user;
+    } catch (error) {
+      console.error("Get current user error:", error);
+      return null;
+    }
+  }
+
+  async logout() {
+    try {
+      const result = await this.account.deleteSessions();
+    } catch (error) {
+      throw error;
+    }
+  }
 }
 
 export const authService = new AuthService();
