@@ -1,16 +1,63 @@
-# React + Vite
+# BlogIt
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React-based blogging platform for creating, editing, and sharing posts.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Create, edit, and delete blog posts
+- Responsive design for all devices
+- Markdown support for posts
+- Backend-as-a-Service integration using Appwrite
+- Easy-to-use interface
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
 
-## Expanding the ESLint configuration
+- Node.js (v14 or higher)
+- npm or yarn
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Installation
+
+```bash
+git clone https://github.com/your-username/blog-it.git
+cd blog-it
+npm install
+```
+
+### Running the App
+
+```bash
+npm start
+```
+
+The app will run at `http://localhost:3000`.
+
+## Folder Structure
+
+```
+blog-it/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── App.js
+│   └── index.js
+├── package.json
+└── README.md
+```
+
+## Technologies Used
+
+- React
+- React Router
+- CSS Modules / Styled Components
+- Markdown-it
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+## License
+
+[MIT](LICENSE)
