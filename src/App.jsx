@@ -1,17 +1,46 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+import "./App.css";
+import { login, logout } from "./store/authSlice";
+import { authService } from "./appwrite/auth";
+import { useDispatch } from "react-redux";
 
+import Header from './components/header/Header'
+import Footer from './components/footer/Footer'
+import { Outlet } from "react-router"
 function App() {
-  const [count, setCount] = useState(0)
+  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    authService
+      .getCurrentUser()
+      .then((userData) => {
+        if (userData) {
+          dispatch(login(userData));
+        } else {
+          dispatch(logout());
+        }
+      })
+      .catch((error) => {
+        console.log("Error fetching user:", error);
+        dispatch(logout());
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [dispatch]);
+
+  if (loading) {
+    return <h2>Loading...</h2>;
+  }
 
   return (
     <>
-    <h1>i have done it, i cracked offers from Amazon, Microsoft, Google....</h1>
-    
+         <Header/>
+        <Outlet/>
+         <Footer/>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
