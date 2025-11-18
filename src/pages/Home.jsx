@@ -13,6 +13,7 @@ function Home() {
             if (posts) {
                 setPosts(posts.documents)
             }
+            else console.log("no posts yet")
         })
     }, [])
   

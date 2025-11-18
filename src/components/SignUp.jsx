@@ -4,8 +4,9 @@ import {Link, useNavigate} from 'react-router-dom'
 import Button from './Button'
 import Input from './Input'
 import Logo from './Logo'
+import { login } from '../store/authSlice' 
 import {useDispatch} from "react-redux"
-import authService from "../appwrite/auth"
+import {authService} from "../appwrite/auth"
 import {useForm} from "react-hook-form"
 
 function Signup() {
@@ -19,8 +20,8 @@ function Signup() {
         try {
             const userData = await authService.createAccount(data)
             if (userData) {
-                const userData = await authService.getCurrentUser()
-                if(userData) dispatch(login(userData));
+                const user = await authService.getCurrentUser()
+                if(user) dispatch(login(user));
                 navigate("/")
             }
         } catch (error) {
